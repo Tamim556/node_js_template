@@ -12,11 +12,14 @@ const PersonSchema = new mongoose.Schema<TPerson>(
         },
 
         phone:{
-            type:String
+            type:String ,required:[true , 'phone is required'] , unique:true 
         }
 
 
 
+    },
+    {
+        timestamps :true 
     }
 )
 

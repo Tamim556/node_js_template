@@ -9,6 +9,10 @@ const router = express.Router()
 router.post('/person-create', PersonController.createPerson)
 
 
+
+router.get('/:id', PersonController.singlePerson)
+
+
 router.get('/', PersonController.getPerson)
 
 

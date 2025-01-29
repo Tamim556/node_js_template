@@ -21,5 +21,15 @@ const getPersonFromDb = async()=>{
 }
 
 
+const singlePerson = async (input: string) => {
+    const result = await Person.findOne({
+        $or: [{ name: input }, { phone: input }]
+    });
 
-export const PersonServices = {createPersonIntoDb ,getPersonFromDb}
+    return result;
+};
+
+
+
+
+export const PersonServices = {createPersonIntoDb ,getPersonFromDb ,singlePerson}
